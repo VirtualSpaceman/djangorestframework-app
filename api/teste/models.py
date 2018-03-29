@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Cliente(models.Model):
     nome = models.CharField(max_length = 30)
 
@@ -21,9 +20,13 @@ class Venda(models.Model):
         return self.produtos
 
 class MaisVendidos(models.Model):
-    descricao = models.CharField(max_length = 50)
+    descricao = models.CharField(max_length = 100)
     qtd = models.IntegerField()
 
 class MelhoresDoMes(models.Model):
     ano = models.CharField(max_length = 4)
     vendasMes = models.CharField(max_length = 100)
+
+class VendasMensais(models.Model):
+    ano = models.CharField(max_length = 4)
+    meses = models.CharField(max_length = 100)

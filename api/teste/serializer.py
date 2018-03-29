@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Cliente, Produto, Venda, MaisVendidos, MelhoresDoMes
+from .models import *
 
 class clienteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,10 +19,15 @@ class vendaSerializer(serializers.ModelSerializer):
 class maisVendidosSerializer(serializers.ModelSerializer):
     class Meta:
         model = MaisVendidos
-        fields = ['id', 'descricao', 'qtd']
+        fields = ['descricao']
 
 class melhoresDoMesSerializer(serializers.ModelSerializer):
     class Meta:
         model = MelhoresDoMes
         fields = ['ano', 'vendasMes']
+
+class vendasMensaisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VendasMensais
+        fields = ['ano', 'meses']
         
