@@ -25,7 +25,8 @@ class VendaView(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
 class MaisVendidosView(viewsets.ReadOnlyModelViewSet):
-    vendas, produtos = list(Venda.objects.all()), list(Produto.objects.all())
+    vendas = list(Venda.objects.all())
+    produtos = list(Produto.objects.all())
     maisVendidos = dict()
     #recupera os produtos mais vendidos no mes
     if len(vendas) > 0: 
@@ -57,7 +58,7 @@ class MaisVendidosView(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, )     
 
 class MelhoresDoMesView(viewsets.ReadOnlyModelViewSet):
-     #Recupera os melhores vendedores do mes
+    #Recupera os melhores vendedores do mes
     meses = ['01', '02' ,'03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
     start, end = date(2018, 1, 1), date(2018, 12, 30)
     vendas = list(Venda.objects.all())

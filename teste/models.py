@@ -25,8 +25,8 @@ class MaisVendidos(models.Model):
 
 class MelhoresDoMes(models.Model):
     ano = models.CharField(max_length = 4)
-    vendasMes = models.CharField(max_length = 100)
+    vendasMes = models.CharField(max_length = 200)
 
 class VendasMensais(models.Model):
     ano = models.CharField(max_length = 4)
-    meses = models.CharField(max_length = 100)
+    meses = models.CharField(max_length = 200)
