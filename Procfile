@@ -1,1 +1,1 @@
-web: gunicorn cognus-teste.wsgi --log-file -
+web: gunicorn api.wsgi --log-file -
